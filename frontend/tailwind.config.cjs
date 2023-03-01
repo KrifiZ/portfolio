@@ -7,8 +7,40 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			animation: {
+				slideInLeft: "slideInLeft 0.3s ease-in",
+				slideInRight: "slideInRight 0.3s ease-in",
+			},
+			keyframes: {
+				slideInLeft: {
+					"0%": {
+						transform: "translateX(300px)",
+					},
+					"100%": {
+						transform: "translateX(0)",
+					},
+				},
+				slideInRight: {
+					"0%": {
+						transform: "translateX(0)",
+					},
+					"100%": {
+						transform: "translateX(300px)",
+					},
+				},
+			},
+			backgroundImage: {
+				"hero-pattern": "url('/src/assets/images/hero-pattern.svg')",
+				hamburger: "url('/src/assets/images/hamburger.svg')",
+				close: "url('/src/assets/images/close.svg')",
+			},
 			colors: {
 				white: "#FFFFFF",
+			},
+			variants: {
+				extend: {
+					opacity: ["disabled"],
+				},
 			},
 		},
 

@@ -5,7 +5,7 @@ const HamburgerButton: React.FC<{ icon: string; showMenu: () => void }> = ({
 	return (
 		<button
 			onClick={showMenu}
-			className={` h-8 w-8 bg-[url('${icon}')] bg-contain bg-center bg-no-repeat `}
+			className={`h-8 w-8 p-3 ${icon} bg-contain bg-center bg-no-repeat`}
 		></button>
 	);
 };

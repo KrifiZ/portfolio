@@ -16,10 +16,7 @@ const NavBar = () => {
 		<div className=" flex justify-between">
 			<h1 className="font-['Lato'] text-3xl text-white ">Michael Müller</h1>
 			{isTabletOrMobile ? (
-				<HamburgerButton
-					icon="./assets/hamburger.svg"
-					showMenu={showMenuHandler}
-				/>
+				<HamburgerButton icon="bg-hamburger" showMenu={showMenuHandler} />
 			) : (
 				" "
 			)}
