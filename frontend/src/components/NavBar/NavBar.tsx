@@ -14,16 +14,11 @@ const NavBar = () => {
 
 	return (
 		<div className=" flex justify-between">
-			<h1 className="font-['Lato'] text-3xl text-white ">Michael Müller</h1>
+			<h1 className="font-lato text-3xl  text-white ">Michael Müller</h1>
+
 			{isTabletOrMobile ? (
 				<HamburgerButton icon="bg-hamburger" showMenu={showMenuHandler} />
 			) : (
-				" "
-			)}
-
-			{isOpen ? <HamburgerMenu onHide={showMenuHandler} /> : ""}
-
-			<MediaQuery query="(min-device-width: 1024px)">
 				<div className=" flex w-96 items-center justify-between ">
 					<div className="flex w-40 justify-between">
 						<a className="text-xl text-white	" href="About">
@@ -34,9 +29,11 @@ const NavBar = () => {
 						</a>
 					</div>
 
-					<Button size="h-8 w-32">Contact Me</Button>
+					<Button text="Contact Me" size="h-8 w-40" />
 				</div>
-			</MediaQuery>
+			)}
+
+			{isOpen ? <HamburgerMenu onHide={showMenuHandler} /> : ""}
 		</div>
 	);
 };

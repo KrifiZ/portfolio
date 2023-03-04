@@ -30,9 +30,13 @@ module.exports = {
 				},
 			},
 			backgroundImage: {
-				"hero-pattern": "url('/src/assets/images/hero-pattern.svg')",
+				pattern: "url('/src/assets/images/diagonal-stripes.svg')",
+				'black-pattern' : "url('/src/assets/images/black-diagonal-stripes.svg')",
 				hamburger: "url('/src/assets/images/hamburger.svg')",
 				close: "url('/src/assets/images/close.svg')",
+			},
+			fontFamily: {
+				lato: ["Lato", "sans-serif"],
 			},
 			colors: {
 				white: "#FFFFFF",
