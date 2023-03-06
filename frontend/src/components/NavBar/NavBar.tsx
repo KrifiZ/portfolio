@@ -1,5 +1,6 @@
 import { useState } from "react";
 import MediaQuery, { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
 import { HamburgerButton } from "../Hamburger/HamburgerButton";
 import { HamburgerMenu } from "../Hamburger/HamburgerMenu";
 import { Button } from "../UI/Button";
@@ -13,7 +14,7 @@ const NavBar = () => {
 	};
 
 	return (
-		<div className=" flex justify-between">
+		<div className="  flex justify-between">
 			<h1 className="font-lato text-3xl  text-white ">Michael Müller</h1>
 
 			{isTabletOrMobile ? (
@@ -21,12 +22,12 @@ const NavBar = () => {
 			) : (
 				<div className=" flex w-96 items-center justify-between ">
 					<div className="flex w-40 justify-between">
-						<a className="text-xl text-white	" href="About">
+						<Link className="text-xl text-white	" to="/about">
 							About
-						</a>
-						<a className="text-xl text-white" href="Projects">
+						</Link>
+						<Link className="text-xl text-white	" to="/projects">
 							Projects
-						</a>
+						</Link>
 					</div>
 
 					<Button text="Contact Me" size="h-8 w-40" />

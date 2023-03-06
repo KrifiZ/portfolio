@@ -1,24 +1,32 @@
 import { ProjectCard } from "../ProjectCard/ProjectCard";
 import { SectionTitle } from "../UI/SectionTitle";
 
-const testProject = {
-	title: "Task Manager",
-	status: "In Progress",
-	description:
-		"application allows users to create, edit, and delete tasks and mark tasks as completed.",
-	startDate: "01/01/2021",
-	endDate: "01/01/2022",
-	budget: "$100,000",
-};
+const projects = [
+	{
+		title: "Task Manager",
+		description:
+			"application allows users to create, edit, and delete tasks and mark tasks as completed.",
+	},
+	{
+		title: "Portfolio",
+		description:
+			"project includes samples of work completed, case studies, and any relevant documentation that demonstrates my skills and expertise.",
+	},
+	{
+		title: "e-commerce",
+		description:
+			"It allows customers to browse and purchase products or services from the comfort of their homes.",
+	},
+];
 
 const ProjectsSection = () => {
 	return (
 		<>
 			<SectionTitle title="PROJECTS" />
 			<div className="flex  flex-wrap justify-center ">
-				<ProjectCard project={testProject} />
-				<ProjectCard project={testProject} />
-				<ProjectCard project={testProject} />
+				{projects.map((project: { title: string; description: string }) => (
+					<ProjectCard project={project} />
+				))}
 			</div>
 		</>
 	);
