@@ -19,6 +19,7 @@ const Hero = () => {
 				<Button
 					text="Let’s Talk"
 					size=" my-4  uppercase font-lato h-8 w-40 text-1.5xl"
+					to="/contact"
 				/>
 			</div>
 			<div>

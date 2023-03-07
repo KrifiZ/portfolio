@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Modal } from "../Modals/Modal";
 import { HamburgerButton } from "./HamburgerButton";
 
@@ -19,15 +19,15 @@ const HamburgerMenu: React.FC<{ onHide: () => void }> = ({ onHide }) => {
 			<div className=" flex flex-col items-center justify-center">
 				<div className="flex flex-col items-center justify-center">
 					<HamburgerButton icon="bg-close" showMenu={hideOverlay} />
-					<Link className="p-5 text-3xl text-white " to="/about">
+					<NavLink className="p-5 text-3xl text-white " to="/about">
 						About
-					</Link>
-					<Link className="p-5 text-3xl text-white" to="/projects">
+					</NavLink>
+					<NavLink className="p-5 text-3xl text-white" to="/projects">
 						Projects
-					</Link>
-					<Link className="p-5 text-3xl text-white" to="/contact">
+					</NavLink>
+					<NavLink className="p-5 text-3xl text-white" to="/contact">
 						Contact
-					</Link>
+					</NavLink>
 				</div>
 			</div>
 		</Modal>

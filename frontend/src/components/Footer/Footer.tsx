@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
 	return (
 		<div className="flex h-56  flex-col items-center justify-start gap-3  bg-stone-800 text-white">
@@ -8,12 +10,12 @@ const Footer = () => {
 			</h3>
 			<button className="h-20 w-20 bg-arrow bg-contain bg-no-repeat"></button>
 			<div className="flex w-full justify-center  gap-4 ">
-				<a className="justify-start text-2xl text-white" href="About">
+				<Link className="justify-start text-2xl text-white" to="/about">
 					About
-				</a>
-				<a className="justify-start text-2xl text-white" href="Projects">
+				</Link>
+				<Link className="justify-start text-2xl text-white" to="/projects">
 					Projects
-				</a>
+				</Link>
 			</div>
 		</div>
 	);
