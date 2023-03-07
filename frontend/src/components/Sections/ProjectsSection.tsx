@@ -24,9 +24,11 @@ const ProjectsSection = () => {
 		<>
 			<SectionTitle title="PROJECTS" />
 			<div className="flex  flex-wrap justify-center ">
-				{projects.map((project: { title: string; description: string }) => (
-					<ProjectCard project={project} />
-				))}
+				{projects.map(
+					(project: { title: string; description: string }, index) => (
+						<ProjectCard key={index} project={project} />
+					)
+				)}
 			</div>
 		</>
 	);
