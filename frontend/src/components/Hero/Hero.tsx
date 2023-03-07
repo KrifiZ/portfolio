@@ -2,7 +2,7 @@ import { Button } from "../UI/Button";
 
 const Hero = () => {
 	return (
-		<div className=" my-6 flex flex-wrap justify-between">
+		<div className="  flex flex-wrap justify-between">
 			<div>
 				<h2 className="font-lato text-2xl font-bold text-white">
 					Hello, <span className="text-blue-500">I'm</span>
@@ -19,6 +19,7 @@ const Hero = () => {
 				<Button
 					text="Let’s Talk"
 					size=" my-4  uppercase font-lato h-8 w-40 text-1.5xl"
+					to="/contact"
 				/>
 			</div>
 			<div>
