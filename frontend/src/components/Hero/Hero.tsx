@@ -2,7 +2,7 @@ import { Button } from "../UI/Button";
 
 const Hero = () => {
 	return (
-		<div className=" my-6 flex flex-wrap justify-between">
+		<div className="  flex flex-wrap justify-between">
 			<div>
 				<h2 className="font-lato text-2xl font-bold text-white">
 					Hello, <span className="text-blue-500">I'm</span>

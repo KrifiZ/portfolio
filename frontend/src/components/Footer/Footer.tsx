@@ -1,6 +1,6 @@
 const Footer = () => {
 	return (
-		<div className="flex h-56 flex-grow flex-col items-center justify-start gap-3 overflow-hidden bg-stone-800 text-white">
+		<div className="flex h-56  flex-col items-center justify-start gap-3  bg-stone-800 text-white">
 			<h3 className="wrap flex text-3xl uppercase">
 				michalmuller
 				<br />

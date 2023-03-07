@@ -14,26 +14,27 @@ const NavBar = () => {
 	};
 
 	return (
-		<div className="  flex justify-between">
-			<h1 className="font-lato text-3xl  text-white ">Michael Müller</h1>
+		<div className=" h-12   bg-stone-800">
+			<div className="flex h-full items-center justify-between p-4">
+				<h1 className=" font-lato text-3xl  text-white ">Michael Müller</h1>
 
-			{isTabletOrMobile ? (
-				<HamburgerButton icon="bg-hamburger" showMenu={showMenuHandler} />
-			) : (
-				<div className=" flex w-96 items-center justify-between ">
-					<div className="flex w-40 justify-between">
-						<Link className="text-xl text-white	" to="/about">
-							About
-						</Link>
-						<Link className="text-xl text-white	" to="/projects">
-							Projects
-						</Link>
+				{isTabletOrMobile ? (
+					<HamburgerButton icon="bg-hamburger  " showMenu={showMenuHandler} />
+				) : (
+					<div className=" flex w-96 items-center justify-between ">
+						<div className="flex w-40 justify-between">
+							<Link className="text-xl text-white	" to="/about">
+								About
+							</Link>
+							<Link className="text-xl text-white	" to="/projects">
+								Projects
+							</Link>
+						</div>
+
+						<Button text="Contact Me" size="h-8 w-40" />
 					</div>
-
-					<Button text="Contact Me" size="h-8 w-40" />
-				</div>
-			)}
-
+				)}
+			</div>
 			{isOpen ? <HamburgerMenu onHide={showMenuHandler} /> : ""}
 		</div>
 	);
