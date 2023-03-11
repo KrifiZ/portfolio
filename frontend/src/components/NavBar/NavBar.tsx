@@ -14,8 +14,12 @@ const NavBar = () => {
 	};
 
 	return (
-		<div className=" h-12   bg-stone-800">
-			<div className="flex h-full items-center justify-between p-4">
+		<div className=" absolute z-10 mt-2 w-screen ">
+			<div
+				className={`flex h-full items-center ${
+					isTabletOrMobile ? "" : "mx-12"
+				} justify-between `}
+			>
 				<h1 className=" font-lato text-3xl  text-white ">Michael Müller</h1>
 
 				{isTabletOrMobile ? (

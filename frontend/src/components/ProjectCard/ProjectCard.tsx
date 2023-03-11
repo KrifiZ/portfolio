@@ -15,7 +15,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 				<p className="text-center  text-xs uppercase  text-white">
 					{project.description}
 				</p>
-				<Button text="Check out" size="w-40 h-8 m-4" />
+				<Button to="" text="Check out" size="w-40 h-8 m-4" />
 			</div>
 		</div>
 	);

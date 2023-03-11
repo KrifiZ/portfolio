@@ -8,7 +8,7 @@ const Backdrop: React.FC<{ onHide: () => void; backdropClass: boolean }> = ({
 	return (
 		<div
 			onClick={onHide}
-			className={` fixed z-10 h-screen w-full ${
+			className={` fixed z-20 h-screen w-full ${
 				backdropClass ? " " : "bg-slate-500/50"
 			}   `}
 		></div>
@@ -21,7 +21,7 @@ const Overlay: React.FC<{
 }> = ({ children, overlayClass }) => {
 	return (
 		<div
-			className={`fixed right-0 z-20 h-full w-2/4 ${
+			className={`fixed right-0 z-30 h-full w-2/4 ${
 				overlayClass ? "animate-slideInRight" : "animate-slideInLeft"
 			} bg-slate-900`}
 		>
