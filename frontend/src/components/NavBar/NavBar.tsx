@@ -14,10 +14,10 @@ const NavBar = () => {
 	};
 
 	return (
-		<div className=" absolute z-10 mt-2 w-screen ">
+		<div className="absolute z-10 mt-2 w-screen ">
 			<div
 				className={`flex h-full items-center ${
-					isTabletOrMobile ? "" : "mx-12"
+					isTabletOrMobile ? "mx-2" : "mx-12"
 				} justify-between `}
 			>
 				<h1 className=" font-lato text-3xl  text-white ">Michael Müller</h1>
@@ -35,7 +35,7 @@ const NavBar = () => {
 							</NavLink>
 						</div>
 
-						<Button to="/dupa" text="Contact Me" size="h-8 w-40" />
+						<Button to="/contact" text="Contact Me" size="h-8 w-40" />
 					</div>
 				)}
 			</div>

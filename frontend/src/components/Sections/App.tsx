@@ -1,8 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { AboutPage } from "./components/pages/AboutPage";
-import { ErrorPage } from "./components/pages/ErrorPage";
-import { HomePage } from "./components/pages/HomePage";
-import { RootLayout } from "./components/pages/Root";
+import { AboutPage } from "../pages/AboutPage";
+import { ContactPage } from "../pages/ContactPage";
+import { ErrorPage } from "../pages/ErrorPage";
+import { HomePage } from "../pages/HomePage";
+import { RootLayout } from "../pages/Root";
 
 const router = createBrowserRouter([
 	{
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
 			{ path: "/", element: <HomePage /> },
 			{ path: "/about", element: <AboutPage /> },
 			{ path: "/projects", element: <HomePage /> },
-			{ path: "/contact", element: <HomePage /> },
+			{ path: "/contact", element: <ContactPage /> },
 			{ path: "*", element: <ErrorPage /> },
 		],
 	},

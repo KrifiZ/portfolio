@@ -1,5 +1,6 @@
 import { Hero } from "../Hero/Hero";
 import { Card } from "../UI/Card";
+import { SectionTitle } from "../UI/SectionTitle";
 
 const icons = [
 	{
@@ -39,7 +40,7 @@ const AboutPage = () => {
 				<h1 className="font-lato text-5xl uppercase text-white">About me</h1>
 			</Hero>
 			<div className="justify-cente flex flex-grow flex-col items-center">
-				<h2 className="text-center text-5xl uppercase">Intrests</h2>
+				<SectionTitle title="Interests" />
 				<Card className=" mx-8 flex max-w-[600px] p-2">
 					<p className=" text-2xl text-white">
 						I'm an avid gamer and chess enthusiast, and I believe that gaming
