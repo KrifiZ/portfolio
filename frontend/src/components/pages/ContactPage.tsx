@@ -1,6 +1,8 @@
 import { Hero } from "../Hero/Hero";
 import { Card } from "../UI/Card";
+import { Input } from "../UI/Input";
 import { SectionTitle } from "../UI/SectionTitle";
+import { SubmitButton } from "../UI/SubmitButton";
 
 const ContactPage = () => {
 	return (
@@ -11,10 +13,32 @@ const ContactPage = () => {
 			<SectionTitle title="Get in touch" />
 			<div className="flex flex-grow flex-col justify-center ">
 				<Card>
-					<input />
-					<input />
-					<input />
-					<button>Submit</button>
+					<Input
+						input={{
+							id: "name",
+							type: "text",
+							placeholder: "Name",
+						}}
+						label={""}
+					/>
+					<Input
+						input={{
+							id: "",
+							type: "",
+							placeholder: "Email",
+						}}
+						label={""}
+					/>
+					<Input
+						input={{
+							id: "",
+							type: "textarea",
+							placeholder: "Message",
+						}}
+						label={""}
+					/>
+
+					<SubmitButton to={""} text={"Send Message"} size={"w-full"} />
 				</Card>
 			</div>
 		</>
