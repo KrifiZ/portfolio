@@ -1,17 +1,17 @@
 interface InputProps {
 	input: {
-		id: string;
 		type: string;
 		placeholder: string;
 	};
-	label: string;
 }
 
 const Input = (props: InputProps) => {
 	return (
 		<>
-			<label htmlFor={props.input.id}>{props.label}</label>
-			<input className="h-8 w-full rounded-sm bg-blue-50" {...props.input} />
+			<input
+				className="my-1 h-10 w-full rounded-sm bg-blue-50 p-2 placeholder-gray-800"
+				{...props.input}
+			/>
 		</>
 	);
 };

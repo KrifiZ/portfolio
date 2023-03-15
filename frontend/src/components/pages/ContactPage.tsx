@@ -3,6 +3,7 @@ import { Card } from "../UI/Card";
 import { Input } from "../UI/Input";
 import { SectionTitle } from "../UI/SectionTitle";
 import { SubmitButton } from "../UI/SubmitButton";
+import { TextArea } from "../UI/TextArea";
 
 const ContactPage = () => {
 	return (
@@ -11,34 +12,28 @@ const ContactPage = () => {
 				<h2 className="font-lato text-5xl uppercase text-white">Contact</h2>
 			</Hero>
 			<SectionTitle title="Get in touch" />
-			<div className="flex flex-grow flex-col justify-center ">
+			<div className="flex flex-grow flex-col justify-center  ">
 				<Card>
-					<Input
-						input={{
-							id: "name",
-							type: "text",
-							placeholder: "Name",
-						}}
-						label={""}
-					/>
-					<Input
-						input={{
-							id: "",
-							type: "",
-							placeholder: "Email",
-						}}
-						label={""}
-					/>
-					<Input
-						input={{
-							id: "",
-							type: "textarea",
-							placeholder: "Message",
-						}}
-						label={""}
-					/>
-
-					<SubmitButton to={""} text={"Send Message"} size={"w-full"} />
+					<form className="p-1">
+						<Input
+							input={{
+								type: "text",
+								placeholder: "Name",
+							}}
+						/>
+						<Input
+							input={{
+								type: "",
+								placeholder: "Email",
+							}}
+						/>
+						<TextArea
+							textarea={{
+								placeholder: "Message",
+							}}
+						/>
+						<SubmitButton to={""} text={"Send Message"} size={"w-full"} />
+					</form>
 				</Card>
 			</div>
 		</>

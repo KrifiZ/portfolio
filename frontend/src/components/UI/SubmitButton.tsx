@@ -7,7 +7,8 @@ interface ButtonProps {
 const SubmitButton: React.FC<ButtonProps> = ({ to, text, size }) => {
 	return (
 		<button
-			className={`${size} flex items-center justify-center rounded-xl bg-blue-500 p-2 text-white  hover:bg-blue-400 hover:transition hover:delay-150 hover:duration-300 hover:ease-in-out`}
+			type="submit"
+			className={`${size} flex items-center  justify-center rounded-sm bg-blue-500 p-2 text-2xl text-white  hover:bg-blue-400 hover:transition hover:delay-150 hover:duration-300 hover:ease-in-out`}
 		>
 			{text}
 		</button>

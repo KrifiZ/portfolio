@@ -54,8 +54,8 @@ const AboutPage = () => {
 			</div>
 			<h3 className="text-center text-5xl uppercase">SKILLS</h3>
 			<div className=" mb-8 flex flex-wrap items-center justify-center gap-2">
-				{icons.map((icon) => (
-					<Card className="h-[127px] w-[127px]">
+				{icons.map((icon, index) => (
+					<Card className="h-[127px] w-[127px]" key={index}>
 						<img
 							src={icon.icon}
 							className="h-[75px] w-[75px] items-center justify-center"
