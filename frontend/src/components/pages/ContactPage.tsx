@@ -66,11 +66,8 @@ const ContactPage = () => {
 					</form>
 				</Card>
 				{icons.map((icon, index) => (
-					<div className="flex items-center">
-						<Card
-							className="max-h-[127px] min-h-[127px] min-w-[127px] max-w-[127px]"
-							key={index}
-						>
+					<div className="flex items-center" key={index}>
+						<Card className="max-h-[127px] min-h-[127px] min-w-[127px] max-w-[127px]">
 							<img src={icon.icon} alt={icon.name} />
 						</Card>
 						<div className="flex flex-col justify-start break-words">
