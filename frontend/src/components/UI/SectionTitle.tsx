@@ -1,6 +1,11 @@
-const SectionTitle: React.FC<{ title: string }> = ({ title }) => {
+const SectionTitle: React.FC<{ title: string; styles?: string }> = ({
+	title,
+	styles,
+}) => {
 	return (
-		<h2 className="text-center text-4xl uppercase text-stone-800">{title}</h2>
+		<h2 className={`text-center text-4xl uppercase ${styles} text-stone-800`}>
+			{title}
+		</h2>
 	);
 };
 

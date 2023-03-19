@@ -4,7 +4,7 @@ import { NavBar } from "../NavBar/NavBar";
 
 const RootLayout = () => {
 	return (
-		<div className="flex h-screen flex-col scroll-auto">
+		<div className="flex h-full flex-col scroll-auto">
 			<NavBar />
 			<Outlet />
 			<Footer />

@@ -1,6 +1,10 @@
 interface TextAreaProps {
 	textarea: {
+		name: string;
 		placeholder: string;
+		value: string;
+		onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+		onBlur: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
 	};
 }
 
