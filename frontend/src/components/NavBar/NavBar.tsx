@@ -20,7 +20,9 @@ const NavBar = () => {
 					isTabletOrMobile ? "mx-2" : "mx-12"
 				} justify-between `}
 			>
-				<h1 className=" font-lato text-3xl  text-white ">Michael Müller</h1>
+				<NavLink className=" font-lato text-3xl  text-white " to="/">
+					Michael Müller
+				</NavLink>
 
 				{isTabletOrMobile ? (
 					<HamburgerButton icon="bg-hamburger  " showMenu={showMenuHandler} />
@@ -30,9 +32,13 @@ const NavBar = () => {
 							<NavLink className="text-xl text-white	" to="/about">
 								About
 							</NavLink>
-							<NavLink className="text-xl text-white	" to="/projects">
-								Projects
-							</NavLink>
+							<a
+								className="text-xl text-white	"
+								href="https://github.com/KrifiZ"
+								target="_blank"
+							>
+								Github
+							</a>
 						</div>
 
 						<Button to="/contact" text="Contact Me" size="h-8 w-40" />
