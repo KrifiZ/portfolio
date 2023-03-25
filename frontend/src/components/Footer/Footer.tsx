@@ -15,15 +15,22 @@ const Footer = () => {
 						@onet.eu
 					</h3>
 
-					<button className="h-12 w-12 bg-arrow bg-contain  bg-no-repeat"></button>
+					<Link
+						className="h-12 w-12 bg-arrow bg-contain  bg-no-repeat"
+						to="/contact"
+					/>
 				</div>
 				<div className="flex w-full justify-between md:justify-start md:gap-4  ">
 					<Link className="justify-start text-2xl text-white" to="/about">
 						About
 					</Link>
-					<Link className="justify-start text-2xl text-white" to="/projects">
-						Projects
-					</Link>
+					<a
+						className="text-2xl text-white"
+						href="https://github.com/KrifiZ"
+						target="_blank"
+					>
+						Github
+					</a>
 				</div>
 			</div>
 		</div>
