@@ -1,0 +1,15 @@
+const ImageOverlay: React.FC<{
+	children: React.ReactNode;
+	overlayClass: boolean;
+}> = ({ children, overlayClass }) => {
+	return (
+		<div
+			className={`fixed top-1/2 left-1/2 z-30 h-5/6 w-5/6 -translate-x-1/2 -translate-y-1/2 overflow-x-hidden rounded-lg bg-slate-800 drop-shadow-2xl 
+		`}
+		>
+			<div className="p-4">{children}</div>
+		</div>
+	);
+};
+
+export { ImageOverlay };
