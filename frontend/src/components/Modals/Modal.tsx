@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { PatternCard } from "../UI/PatternCard";
 import { NavbarOverlay } from "../Overlays/NavbarOverlay";
 import { ProjectOverlay } from "../Overlays/ProjectOverlay";
 import { ImageOverlay } from "../Overlays/ImageOverlay";
+import { useDisableBodyScroll } from "../../hooks/useDisableBodyScroll";
 
 interface ModalProps {
 	onHide: () => void;
-	isOverlay: boolean;
+	isOpen: boolean;
 	children: React.ReactNode;
 	overlayType: "project" | "image" | "navbar";
 	zIndex?: number;
 	blurred?: boolean;
+	disabledScroll?: boolean;
 }
 
 const Backdrop: React.FC<{
@@ -36,23 +38,28 @@ const portal = document.getElementById("overlays") as HTMLElement;
 const Modal: React.FC<ModalProps> = ({
 	children,
 	onHide,
-	isOverlay,
+	isOpen,
 	overlayType,
 	zIndex,
 	blurred,
+	disabledScroll = true,
 }) => {
+	if (disabledScroll) {
+		useDisableBodyScroll();
+	}
+
 	let overlayClass: React.ReactElement | undefined;
 	if (overlayType === "navbar") {
 		overlayClass = (
-			<NavbarOverlay overlayClass={isOverlay}>{children}</NavbarOverlay>
+			<NavbarOverlay overlayClass={isOpen}>{children}</NavbarOverlay>
 		);
 	} else if (overlayType === "project") {
 		overlayClass = (
-			<ProjectOverlay overlayClass={isOverlay}>{children}</ProjectOverlay>
+			<ProjectOverlay overlayClass={isOpen}>{children}</ProjectOverlay>
 		);
 	} else if (overlayType === "image") {
 		overlayClass = (
-			<ImageOverlay overlayClass={isOverlay}>{children}</ImageOverlay>
+			<ImageOverlay overlayClass={isOpen}>{children}</ImageOverlay>
 		);
 	}
 	let zIndexClass = zIndex ? zIndex : 20;
@@ -61,7 +68,7 @@ const Modal: React.FC<ModalProps> = ({
 			{ReactDOM.createPortal(
 				<Backdrop
 					onHide={onHide}
-					backdropClass={isOverlay}
+					backdropClass={isOpen}
 					zIndex={zIndexClass}
 					blurred={blurred}
 				/>,

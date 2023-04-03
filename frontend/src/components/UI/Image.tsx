@@ -26,9 +26,10 @@ const Image = ({ src, alt, className, ...props }: ImageProps) => {
 				<Modal
 					zIndex={40}
 					onHide={openModal}
-					isOverlay={false}
+					isOpen={false}
 					overlayType="image"
 					blurred={true}
+					disabledScroll={false}
 				>
 					<img
 						className="h-full w-full "

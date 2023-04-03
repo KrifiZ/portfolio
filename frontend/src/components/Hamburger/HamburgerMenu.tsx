@@ -15,7 +15,7 @@ const HamburgerMenu: React.FC<{ onHide: () => void }> = ({ onHide }) => {
 	};
 
 	return (
-		<Modal onHide={hideOverlay} isOverlay={isCustomClass} overlayType="navbar">
+		<Modal onHide={hideOverlay} isOpen={isCustomClass} overlayType="navbar">
 			<div className=" flex flex-col items-center justify-center">
 				<div className="flex flex-col items-center justify-center">
 					<HamburgerButton icon="bg-close" showMenu={hideOverlay} />

@@ -3,6 +3,8 @@ import { Modal } from "../Modals/Modal";
 import { ModalButton } from "../UI/ModalButton";
 import { PatternCard } from "../UI/PatternCard";
 import { Image } from "../UI/Image";
+import { OpenTabButton } from "../UI/LinkButton";
+import { ProjectModal } from "../Modals/ProjectModal";
 
 interface ProjectCardProps {
 	project: {
@@ -25,37 +27,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 			</p>
 			<ModalButton onClick={openModal} text="Check out" size="w-40 h-8 m-4" />
 
-			{modalIsOpen ? (
-				<Modal onHide={openModal} isOverlay={false} overlayType="project">
-					<div className="flex flex-row justify-between">
-						<h2 className="text-3xl text-white">Task Manager</h2>
-						<button>X</button>
-					</div>
-					<h3 className="text-xl	 text-white">Gallery</h3>
-					<div className="flex flex-row flex-wrap gap-1">
-						<Image src="" alt={""} className={""} />
-						<Image src="" alt={""} className={""} />
-						<Image src="" alt={""} className={""} />
-					</div>
-
-					<h4 className="text-xl	 text-white">Long story short</h4>
-					<p className="text-lg text-white">
-						An app that allows you to create, edit, delete and mark tasks as
-						completed.
-					</p>
-					<h5 className="text-xl text-white">Tech stack</h5>
-
-					<ul className="text-lg text-white">
-						<li>React</li>
-						<li>Node.js</li>
-						<li>Express.js</li>
-						<li>Typescript</li>
-						<li>MongoDB</li>
-					</ul>
-				</Modal>
-			) : (
-				""
-			)}
+			{modalIsOpen ? <ProjectModal openModal={openModal} /> : null}
 		</PatternCard>
 	);
 };
