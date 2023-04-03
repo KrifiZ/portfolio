@@ -10,18 +10,23 @@ interface ModalProps {
 	isOverlay: boolean;
 	children: React.ReactNode;
 	overlayType: "project" | "image" | "navbar";
+	zIndex?: number;
+	blurred?: boolean;
 }
 
-const Backdrop: React.FC<{ onHide: () => void; backdropClass: boolean }> = ({
-	onHide,
-	backdropClass,
-}) => {
+const Backdrop: React.FC<{
+	onHide: () => void;
+	backdropClass: boolean;
+	zIndex: number;
+	blurred?: boolean;
+}> = ({ onHide, backdropClass, zIndex, blurred }) => {
 	return (
 		<div
 			onClick={onHide}
-			className={` fixed z-20 h-screen w-full ${
-				backdropClass ? " " : "bg-[rgba(0,0,0,.12)] bg-opacity-25"
-			}   `}
+			className={`fixed h-screen w-full ${
+				backdropClass ? "" : "bg-[rgba(0,0,0,.12)] bg-opacity-100"
+			} ${blurred ? "backdrop-blur-md" : ""}`}
+			style={{ zIndex }}
 		></div>
 	);
 };
@@ -33,6 +38,8 @@ const Modal: React.FC<ModalProps> = ({
 	onHide,
 	isOverlay,
 	overlayType,
+	zIndex,
+	blurred,
 }) => {
 	let overlayClass: React.ReactElement | undefined;
 	if (overlayType === "navbar") {
@@ -48,11 +55,16 @@ const Modal: React.FC<ModalProps> = ({
 			<ImageOverlay overlayClass={isOverlay}>{children}</ImageOverlay>
 		);
 	}
-
+	let zIndexClass = zIndex ? zIndex : 20;
 	return (
 		<React.Fragment>
 			{ReactDOM.createPortal(
-				<Backdrop onHide={onHide} backdropClass={isOverlay} />,
+				<Backdrop
+					onHide={onHide}
+					backdropClass={isOverlay}
+					zIndex={zIndexClass}
+					blurred={blurred}
+				/>,
 				portal
 			)}
 			{ReactDOM.createPortal(overlayClass, portal)}

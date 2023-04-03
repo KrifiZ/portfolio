@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Modal } from "../Modals/Modal";
 import { ModalButton } from "../UI/ModalButton";
 import { PatternCard } from "../UI/PatternCard";
+import { Image } from "../UI/Image";
 
 interface ProjectCardProps {
 	project: {
@@ -25,37 +26,16 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 			<ModalButton onClick={openModal} text="Check out" size="w-40 h-8 m-4" />
 
 			{modalIsOpen ? (
-				<Modal onHide={openModal} isOverlay={true} overlayType="project">
+				<Modal onHide={openModal} isOverlay={false} overlayType="project">
 					<div className="flex flex-row justify-between">
 						<h2 className="text-3xl text-white">Task Manager</h2>
 						<button>X</button>
 					</div>
 					<h3 className="text-xl	 text-white">Gallery</h3>
 					<div className="flex flex-row flex-wrap gap-1">
-						<img
-							onClick={() => (
-								<Modal onHide={openModal} isOverlay={true} overlayType="image">
-									<img
-										className="h-24 w-24"
-										alt=""
-										src="../src/assets/images/pudzian.jpg"
-									></img>
-								</Modal>
-							)}
-							className="h-24 w-24"
-							alt=""
-							src="../src/assets/images/pudzian.jpg"
-						></img>
-						<img
-							className="h-24 w-24"
-							alt=""
-							src="../src/assets/images/pudzian.jpg"
-						></img>
-						<img
-							className="h-24 w-24"
-							alt=""
-							src="../src/assets/images/pudzian.jpg"
-						></img>
+						<Image src="" alt={""} className={""} />
+						<Image src="" alt={""} className={""} />
+						<Image src="" alt={""} className={""} />
 					</div>
 
 					<h4 className="text-xl	 text-white">Long story short</h4>

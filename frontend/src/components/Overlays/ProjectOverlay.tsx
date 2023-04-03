@@ -5,7 +5,7 @@ const ProjectOverlay: React.FC<{
 	return (
 		<div
 			className={`fixed top-1/2 left-1/2 z-30 h-5/6 w-5/6 -translate-x-1/2 -translate-y-1/2 overflow-x-hidden rounded-lg bg-slate-800 drop-shadow-2xl ${
-				overlayClass ? "bg-opacity-50 backdrop-blur-md" : ""
+				overlayClass ? "" : "bg-opacity-50 backdrop-blur-md"
 			}`}
 		>
 			<div className="p-4">{children}</div>
