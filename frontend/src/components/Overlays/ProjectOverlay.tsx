@@ -8,7 +8,7 @@ const ProjectOverlay: React.FC<{
 				overlayClass ? "" : "bg-opacity-50 backdrop-blur-md"
 			}`}
 		>
-			<div className="p-4">{children}</div>
+			<div className="flex h-full flex-col p-4">{children}</div>
 		</div>
 	);
 };
