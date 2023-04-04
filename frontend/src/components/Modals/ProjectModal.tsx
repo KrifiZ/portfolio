@@ -1,6 +1,7 @@
 import { Modal } from "./Modal";
 import { Image } from "../UI/Image";
 import { OpenTabButton } from "../UI/LinkButton";
+import { Card } from "../UI/Card";
 
 interface ProjectModalProps {
 	openModal: () => void;
@@ -26,12 +27,22 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ openModal }) => (
 		</p>
 		<h5 className="text-xl text-white">Tech stack</h5>
 
-		<ul className="text-lg text-white">
-			<li>React</li>
-			<li>Node.js</li>
-			<li>Express.js</li>
-			<li>Typescript</li>
-			<li>MongoDB</li>
+		<ul className="grid list-none auto-rows-[1fr] grid-cols-[repeat(auto-fit,_minmax(120px,_1fr))] place-items-center justify-items-stretch	 gap-1 text-lg text-white">
+			<Card className="p-8">
+				<span>React</span>
+			</Card>
+			<Card className="p-8">
+				<span>Node.js</span>
+			</Card>
+			<Card className="p-8">
+				<span>Express.js</span>
+			</Card>
+			<Card className="p-8">
+				<span>Typescript</span>
+			</Card>
+			<Card className="p-8">
+				<span>MongoDB</span>
+			</Card>
 		</ul>
 		<div className="flex flex-col gap-2 md:flex-row">
 			<OpenTabButton text={"dupa"} size={"h-12 w-12"} redirectTo={"dupa.mp4"} />
