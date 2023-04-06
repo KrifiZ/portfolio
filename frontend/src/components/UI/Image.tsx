@@ -4,10 +4,9 @@ import { Modal } from "../Modals/Modal";
 interface ImageProps {
 	src: string;
 	alt: string;
-	className: string;
 }
 
-const Image = ({ src, alt, className, ...props }: ImageProps) => {
+const Image = ({ src, alt, ...props }: ImageProps) => {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 
 	const openModal = () => {
@@ -18,9 +17,10 @@ const Image = ({ src, alt, className, ...props }: ImageProps) => {
 		<>
 			<img
 				onClick={openModal}
-				className="h-24 w-24"
-				alt=""
-				src="../src/assets/images/pudzian.jpg"
+				className="h-24 w-24 md:h-32 md:w-32 lg:h-48 lg:w-48 xl:h-64 xl:w-64 "
+				alt={alt}
+				src={src}
+				loading="lazy"
 			></img>
 			{modalIsOpen && (
 				<Modal
@@ -34,8 +34,9 @@ const Image = ({ src, alt, className, ...props }: ImageProps) => {
 					<img
 						className="h-full w-full "
 						onClick={openModal}
-						alt=""
-						src="../src/assets/images/pudzian.jpg"
+						alt={alt}
+						src={src}
+						loading="lazy"
 					></img>
 				</Modal>
 			)}

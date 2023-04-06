@@ -5,14 +5,11 @@ import { PatternCard } from "../UI/PatternCard";
 import { Image } from "../UI/Image";
 import { OpenTabButton } from "../UI/LinkButton";
 import { ProjectModal } from "../Modals/ProjectModal";
-
+import { Project } from "../../data/projectData";
 interface ProjectCardProps {
-	project: {
-		title: string;
-		description: string;
-	};
+	project: Project;
 }
-const ProjectCard = ({ project }: ProjectCardProps) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 
 	const openModal = () => {
@@ -27,7 +24,9 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 			</p>
 			<ModalButton onClick={openModal} text="Check out" size="w-40 h-8 m-4" />
 
-			{modalIsOpen ? <ProjectModal openModal={openModal} /> : null}
+			{modalIsOpen ? (
+				<ProjectModal openModal={openModal} project={project} />
+			) : null}
 		</PatternCard>
 	);
 };
