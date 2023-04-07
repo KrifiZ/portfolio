@@ -12,4 +12,5 @@ const Hero: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 		</div>
 	);
 };
+
 export { Hero };

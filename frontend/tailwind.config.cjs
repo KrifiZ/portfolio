@@ -10,6 +10,7 @@ module.exports = {
 			animation: {
 				slideInLeft: "slideInLeft 0.3s ease-in",
 				slideInRight: "slideInRight 0.3s ease-in",
+				fadeInDown: "fadeInDown 0.5s ease-out",
 			},
 			keyframes: {
 				slideInLeft: {
@@ -26,6 +27,16 @@ module.exports = {
 					},
 					"100%": {
 						transform: "translateX(300px)",
+					},
+				},
+				fadeInDown: {
+					"0%": {
+						opacity: "0",
+						transform: "translateY(-20px)",
+					},
+					"100%": {
+						opacity: "1",
+						transform: "translateY(0)",
 					},
 				},
 			},
