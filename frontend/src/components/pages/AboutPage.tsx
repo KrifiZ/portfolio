@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Hero } from "../Hero/Hero";
 import { Card } from "../UI/Card";
 import { SectionTitle } from "../UI/SectionTitle";
@@ -37,9 +38,28 @@ const AboutPage = () => {
 	return (
 		<>
 			<Hero>
-				<h1 className="font-lato text-5xl uppercase text-white">About me</h1>
+				<motion.div
+					initial="hidden"
+					animate="visible"
+					variants={{
+						hidden: { opacity: 0, y: 20 },
+						visible: { opacity: 1, y: 0 },
+					}}
+					transition={{ ease: "easeOut", duration: 0.8 }}
+				>
+					<h1 className="font-lato text-5xl uppercase text-white">About me</h1>
+				</motion.div>
 			</Hero>
-			<div className="justify-cente flex flex-grow flex-col items-center">
+			<motion.div
+				initial="hidden"
+				animate="visible"
+				variants={{
+					hidden: { opacity: 0, y: 20 },
+					visible: { opacity: 1, y: 0 },
+				}}
+				transition={{ ease: "easeOut", duration: 0.8 }}
+				className="flex flex-grow flex-col items-center justify-center"
+			>
 				<SectionTitle title="Interests" />
 				<Card className=" mx-8 flex max-w-[600px] p-2">
 					<p className=" text-2xl text-white">
@@ -51,19 +71,31 @@ const AboutPage = () => {
 						connect with me to discuss our favorite games and strategies!
 					</p>
 				</Card>
-			</div>
-			<h3 className="text-center text-5xl uppercase">SKILLS</h3>
-			<div className=" mb-8 flex flex-wrap items-center justify-center gap-2">
-				{icons.map((icon, index) => (
-					<Card className="h-[127px] w-[127px]" key={index}>
-						<img
-							src={icon.icon}
-							className="h-[75px] w-[75px] items-center justify-center"
-						/>
-						<p className="text-center text-xl text-white">{icon.name}</p>
-					</Card>
-				))}
-			</div>
+			</motion.div>
+
+			<motion.div
+				initial="hidden"
+				animate="visible"
+				variants={{
+					hidden: { opacity: 0, y: 20 },
+					visible: { opacity: 1, y: 0 },
+				}}
+				transition={{ ease: "easeOut", duration: 0.8 }}
+				className="flex-grow "
+			>
+				<SectionTitle title="Skills" />
+				<div className="mb-8 flex flex-wrap items-center justify-center gap-2">
+					{icons.map((icon, index) => (
+						<Card className="h-[127px] w-[127px]" key={index}>
+							<img
+								src={icon.icon}
+								className="h-[75px] w-[75px] items-center justify-center"
+							/>
+							<p className="text-center text-xl text-white">{icon.name}</p>
+						</Card>
+					))}
+				</div>
+			</motion.div>
 		</>
 	);
 };

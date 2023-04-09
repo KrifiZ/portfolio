@@ -15,14 +15,22 @@ const HamburgerMenu: React.FC<{ onHide: () => void }> = ({ onHide }) => {
 	};
 
 	return (
-		<Modal onHide={hideOverlay} isOverlay={isCustomClass}>
+		<Modal onHide={hideOverlay} isOpen={isCustomClass} overlayType="navbar">
 			<div className=" flex flex-col items-center justify-center">
 				<div className="flex flex-col items-center justify-center">
 					<HamburgerButton icon="bg-close" showMenu={hideOverlay} />
-					<NavLink className="p-5 text-3xl text-white " to="/">
+					<NavLink
+						onClick={hideOverlay}
+						className="p-5 text-3xl text-white "
+						to="/"
+					>
 						Home
 					</NavLink>
-					<NavLink className="p-5 text-3xl text-white " to="/about">
+					<NavLink
+						onClick={hideOverlay}
+						className="p-5 text-3xl text-white "
+						to="/about"
+					>
 						About
 					</NavLink>
 					<a
@@ -32,7 +40,11 @@ const HamburgerMenu: React.FC<{ onHide: () => void }> = ({ onHide }) => {
 					>
 						Github
 					</a>
-					<NavLink className="p-5 text-3xl text-white" to="/contact">
+					<NavLink
+						onClick={hideOverlay}
+						className="p-5 text-3xl text-white"
+						to="/contact"
+					>
 						Contact
 					</NavLink>
 				</div>
