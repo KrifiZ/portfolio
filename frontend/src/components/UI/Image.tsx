@@ -32,7 +32,7 @@ const Image = ({ src, alt, ...props }: ImageProps) => {
 					disabledScroll={false}
 				>
 					<img
-						className="h-full w-full "
+						className="aspect-w-1 aspect-h-1 h-auto max-h-[95vh] w-auto max-w-[95vw] rounded-xl border-2 border-gray-400 object-cover shadow-lg"
 						onClick={openModal}
 						alt={alt}
 						src={src}

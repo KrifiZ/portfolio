@@ -1,15 +1,22 @@
+import { motion } from "framer-motion";
+
 const ImageOverlay: React.FC<{
 	children: React.ReactNode;
 	overlayClass: boolean;
 }> = ({ children, overlayClass }) => {
 	return (
-		<div
-			className={`fixed top-1/2 left-1/2 z-50  -translate-x-1/2 -translate-y-1/2   `}
+		<motion.div
+			initial="hidden"
+			animate="visible"
+			variants={{
+				hidden: { opacity: 0, y: 20 },
+				visible: { opacity: 1, y: 0 },
+			}}
+			transition={{ ease: "easeIn", duration: 0.4 }}
+			className="pointer-events-none fixed top-0 left-0 z-50 flex h-full w-full items-center justify-center"
 		>
-			<div className="overflow-hidden  rounded-lg outline-dashed">
-				{children}
-			</div>
-		</div>
+			{children}
+		</motion.div>
 	);
 };
 
