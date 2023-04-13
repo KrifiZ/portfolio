@@ -1,3 +1,7 @@
+import homePageMobileImage from "../assets/images/1.webp";
+import formModalImage from "../assets/images/2.webp";
+import homePageDesktopImage from "../assets/images/3.webp";
+
 export type Project = {
 	title: string;
 	description: string;
@@ -24,15 +28,15 @@ export const projects: Project[] = [
 		],
 		images: [
 			{
-				src: "../../src/assets/images/1.webp",
+				src: homePageMobileImage,
 				alt: "Home Page Mobile",
 			},
 			{
-				src: "../../src/assets/images/2.webp",
+				src: formModalImage,
 				alt: "Form Modal",
 			},
 			{
-				src: "../../src/assets/images/3.webp",
+				src: homePageDesktopImage,
 				alt: "Home Page Desktop",
 			},
 		],

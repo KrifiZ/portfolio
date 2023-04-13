@@ -2,37 +2,7 @@ import { motion } from "framer-motion";
 import { Hero } from "../Hero/Hero";
 import { Card } from "../UI/Card";
 import { SectionTitle } from "../UI/SectionTitle";
-
-const icons = [
-	{
-		name: "HTML",
-		icon: "../src/assets/images/html.svg",
-	},
-	{
-		name: "CSS",
-		icon: "../src/assets/images/css.svg",
-	},
-	{
-		name: "JavaScript",
-		icon: "../src/assets/images/javascript.svg",
-	},
-	{
-		name: "TypeScript",
-		icon: "../src/assets/images/typescript.svg",
-	},
-	{
-		name: "React",
-		icon: "../src/assets/images/react.svg",
-	},
-	{
-		name: "Node",
-		icon: "../src/assets/images/node.svg",
-	},
-	{
-		name: "MongoDB",
-		icon: "../src/assets/images/mongodb.svg",
-	},
-];
+import { icons } from "../../data/icons";
 
 const AboutPage = () => {
 	return (

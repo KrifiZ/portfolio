@@ -9,21 +9,7 @@ import * as Yup from "yup";
 import { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-
-const icons = [
-	{
-		name: "email",
-		icon: "../src/assets/images/email.svg",
-	},
-	{
-		name: "discord",
-		icon: "../src/assets/images/discord.svg",
-	},
-	{
-		name: "github",
-		icon: "../src/assets/images/github.svg",
-	},
-];
+import { contactIcons as icons } from "../../data/icons";
 
 const description: { [key: string]: { title: string; text: string } } = {
 	email: {
@@ -114,8 +100,8 @@ const ContactPage = () => {
 				className="flex flex-grow flex-col items-center justify-center"
 			>
 				<SectionTitle styles="my-4" title="Get in touch" />
-				<div className="flex flex-grow flex-col justify-center gap-2  py-8 md:flex-row-reverse ">
-					<Card className="w-full max-w-[500px]">
+				<div className="flex w-full flex-grow flex-col justify-center gap-2  py-8 md:flex-row-reverse ">
+					<Card className=" w-full max-w-[500px] flex-none">
 						<form className="w-full p-1 " onSubmit={formik.handleSubmit}>
 							<Input
 								input={{
@@ -128,7 +114,9 @@ const ContactPage = () => {
 								}}
 							/>
 							{formik.errors.name && formik.touched.name ? (
-								<div className="text-md text-red-500">{formik.errors.name}</div>
+								<p className="text-md overflow-auto text-red-500">
+									{formik.errors.name}
+								</p>
 							) : null}
 							<Input
 								input={{
@@ -141,9 +129,9 @@ const ContactPage = () => {
 								}}
 							/>
 							{formik.errors.email && formik.touched.email ? (
-								<div className="text-md text-red-500">
+								<p className="text-md overflow-auto text-red-500">
 									{formik.errors.email}
-								</div>
+								</p>
 							) : null}
 
 							<TextArea
@@ -156,9 +144,9 @@ const ContactPage = () => {
 								}}
 							/>
 							{formik.errors.message && formik.touched.message ? (
-								<div className="text-md text-red-500">
+								<p className="text-md overflow-auto text-red-500">
 									{formik.errors.message}
-								</div>
+								</p>
 							) : null}
 
 							<SubmitButton
