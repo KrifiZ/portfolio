@@ -3,7 +3,7 @@ import { Hero } from "../Hero/Hero";
 import { ProjectsSection } from "../Sections/ProjectsSection";
 import { Button } from "../UI/Button";
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import devIcon from "../../assets/images/developer.svg";
 
 const HomePage = () => {
 	const isTabletOrMobile = useMediaQuery({ maxWidth: 1024 });
@@ -47,7 +47,7 @@ const HomePage = () => {
 					transition={{ ease: "easeOut", duration: 0.8 }}
 				>
 					<img
-						src="../src/assets/images/developer.svg"
+						src={devIcon}
 						className="sm:h-[200px] md:h-[225px] lg:h-[250px]"
 						alt="developer"
 					/>
